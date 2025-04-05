@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clonar o repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configurar Node.js (se necessário para ferramentas como ESLint ou Jest)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # 3. Instalar dependências (se houver um package.json)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Validar código com ESLint
+      - name: Run ESLint
+        run: npx eslint src/js --ext .js
+
+      # 5. Validar formatação com Prettier
+      - name: Run Prettier
+        run: npx prettier --check "src/**/*.{html,css,js}"
+
+      # 6. Executar testes (opcional)
+      - name: Run Tests
+        run: npx jest
+
+      # 7. Deploy no GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src
