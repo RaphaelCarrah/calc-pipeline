@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "Seu Nome",
+  "author": "Carrah",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.0.0",
