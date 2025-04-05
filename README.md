@@ -89,13 +89,7 @@ Quer ajudar a melhorar a **PiperCalc** e aprender sobre **CI/CD**?
 
 Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais informações.  
 
----
 
-<div align="center">
-  <h3>✨ Aprenda CI/CD na Prática com a PiperCalc! ✨</h3>
-</div>  
-
----
 
 ### **🔗 Links Úteis**  
 📌 [GitHub Actions Docs](https://docs.github.com/en/actions)  
