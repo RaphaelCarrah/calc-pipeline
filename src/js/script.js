@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         previousOperand = currentOperand;
         currentOperand = '';
     }
-
+  
     function compute() {
         let computation;
         const prev = parseFloat(previousOperand);
