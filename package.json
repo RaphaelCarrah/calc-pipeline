@@ -4,12 +4,14 @@
   "description": "Calculadora web responsiva",
   "main": "index.js",
   "scripts": {
-    "start": "live-server src",
-    "lint": "eslint src/js --ext .js",
-    "format": "prettier --write src/**/*.{html,css,js}",
-    "test": "jest"
+    "start": "live-server src", 
+    "lint": "eslint src/js --ext .js", 
+    "lint:fix": "eslint src/js --ext .js --fix", 
+    "format": "prettier --write src/**/*.{html,css,js}", 
+    "test": "jest", 
+    "build": "echo 'Nenhum processo de build configurado ainda'" 
   },
-  "keywords": [],
+  "keywords": ["calculadora", "web", "responsiva", "pipelines"],
   "author": "Carrah",
   "license": "MIT",
   "devDependencies": {
