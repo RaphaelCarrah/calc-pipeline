@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-        const unusedVariable = 42;
+        const unusedVariable = 42; 
     const previousOperandElement = document.getElementById('previous-operand');
     const currentOperandElement = document.getElementById('current-operand');
     const numberButtons = document.querySelectorAll('[id^="one"], [id^="two"], [id^="three"], [id^="four"], [id^="five"], [id^="six"], [id^="seven"], [id^="eight"], [id^="nine"], [id^="zero"]');
