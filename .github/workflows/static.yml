@@ -1,62 +1,62 @@
 name: Deploy static content to Pages
 
+# Definindo quando esse fluxo será executado
 on:
-  # Runs on pushes targeting the default branch
+  # Quando houver um push na branch principal (main)
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Também pode ser executado manualmente pela aba "Actions"
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Permissões para o GitHub poder fazer o deploy no Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Garantindo que apenas um deploy ocorra por vez (sem cancelar o que já está em andamento)
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Job único de deploy
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Rodar em máquina virtual com Ubuntu
     steps:
-      # 1. Checkout do código
+      # 1. Baixar meu repositório
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Configurar Node.js
+      # 2. Preparar o Node.js (versão 16)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      # 3. Instalar dependências
+      # 3. Instalar as dependências do projeto (npm install)
       - name: Instalar dependências
         run: npm install
 
-      # 4. Verificar código com ESLint
+      # 4. Rodar o ESLint para checar erros de código
       - name: Verificar código com ESLint
         run: npm run lint
 
-      # 5. Configurar GitHub Pages
+      # 5. Configurar o ambiente para o GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 6. Fazer upload dos arquivos
+      # 6. Fazer o upload dos arquivos que serão publicados
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './src'
+          path: './src'  # Caminho da pasta que será publicada (mudar se for outra)
 
-      # 7. Deploy para o GitHub Pages
+      # 7. Publicar o conteúdo no GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
