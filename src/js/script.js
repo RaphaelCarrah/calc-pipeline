@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             previousOperandElement.innerText = `${previousOperand} ${operation}`;
         } else {
             previousOperandElement.innerText = previousOperand;
-        
+       // induzindo o erro
+        }
     }
 
     function appendNumber(number) {
