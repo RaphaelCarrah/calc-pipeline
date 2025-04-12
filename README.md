@@ -13,10 +13,10 @@
 
 A **PiperCalc** é uma calculadora web desenvolvida com **Material Design**, totalmente responsiva e construída em **HTML, CSS e JavaScript**.  
 
-🔹 **Foco Principal**:  
-✔ Estudar e implementar **pipelines de CI/CD** (Integração Contínua e Entrega Contínua)  
-✔ Aprender boas práticas de **automação de testes e deploy**  
-✔ Criar um ambiente colaborativo usando **GitHub Actions**  
+### **Objetivos do Projeto**  
+- Estudar e implementar **pipelines de CI/CD** (Integração Contínua e Entrega Contínua).  
+- Aprender boas práticas de **automação de testes, linting e deploy**.  
+- Criar um ambiente colaborativo usando **GitHub Actions**.  
 
 ---
 
@@ -25,30 +25,31 @@ A **PiperCalc** é uma calculadora web desenvolvida com **Material Design**, tot
 | **Categoria**       | **Tecnologias**                                                                 |
 |----------------------|---------------------------------------------------------------------------------|
 | **Frontend**         | HTML5, CSS3, JavaScript (ES6+)                                                  |
-| **Design**           | Material Design, Responsividade                                                 |
-| **CI/CD**            | GitHub Actions, Workflows Automatizados                                         |
+| **Design**           | Material Design, Responsividade                                                |
+| **CI/CD**            | GitHub Actions, Workflows Automatizados                                        |
 | **Versionamento**    | Git, GitHub                                                                     |
-| **Testes**           | Jest (em implementação)                                                         |
+| **Testes**           | Jest                                                                           |
+| **Linting**          | ESLint, Prettier                                                               |
 
 ---
 
 ## **⚙️ Pipelines Implementadas**  
 
 ### **1️⃣ CI (Integração Contínua)**  
-✅ **Objetivo**: Garantir que todo novo código não quebre a aplicação.  
-✅ **Gatilho**: Executado a cada **push** ou **pull request**.  
-✅ **Etapas**:  
-   - Instala dependências (`npm install`)  
-   - Roda testes unitários (`npm test`)  
-   - Verifica linting (se configurado)  
+- **Objetivo**: Garantir que todo novo código não quebre a aplicação.  
+- **Gatilho**: Executado a cada **push** ou **pull request**.  
+- **Etapas**:  
+  1. Instala dependências (`npm install`).  
+  2. Roda testes unitários (`npm test`).  
+  3. Verifica linting com ESLint (`npm run lint`).  
 
-📌 **Arquivo de Config**: `.github/workflows/ci.yml`  
+📌 **Arquivo de Configuração**: `.github/workflows/ci.yml`  
 
 ### **2️⃣ CD (Entrega Contínua - Em Desenvolvimento)**  
-🚀 **Objetivo**: Deploy automático para **GitHub Pages** ou outro host.  
-🔜 **Próximos Passos**:  
-   - Configurar **autodeploy** após testes bem-sucedidos  
-   - Adicionar **notificações no Slack/Discord**  
+- **Objetivo**: Deploy automático para **GitHub Pages** ou outro host.  
+- **Próximos Passos**:  
+  - Configurar **autodeploy** após testes bem-sucedidos.  
+  - Adicionar **notificações no Slack/Discord**.  
 
 ---
 
@@ -60,6 +61,8 @@ pipercalc/
 ├── src/                  # Código-fonte (HTML, CSS, JS)
 ├── tests/                # Testes automatizados
 ├── docs/                 # Documentação
+├── .eslintrc.json        # Configuração do ESLint
+├── .prettierrc           # Configuração do Prettier
 └── README.md             # Este arquivo
 ```
 
@@ -69,7 +72,7 @@ pipercalc/
 
 Quer ajudar a melhorar a **PiperCalc** e aprender sobre **CI/CD**?  
 
-1. **Faça um Fork** do projeto  
+1. **Faça um Fork** do projeto.  
 2. **Crie uma Branch**:  
    ```bash
    git checkout -b feature/nova-funcionalidade
@@ -79,7 +82,7 @@ Quer ajudar a melhorar a **PiperCalc** e aprender sobre **CI/CD**?
    git commit -m "Adiciona nova feature"
    git push origin feature/nova-funcionalidade
    ```  
-4. **Abra um Pull Request**  
+4. **Abra um Pull Request**.  
 
 📜 **Leia nosso [CONTRIBUTING.md](docs/CONTRIBUTING.md)** para mais detalhes!  
 
@@ -89,16 +92,18 @@ Quer ajudar a melhorar a **PiperCalc** e aprender sobre **CI/CD**?
 
 Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais informações.  
 
+---
 
+## **🔗 Links Úteis**  
+- [GitHub Actions Docs](https://docs.github.com/en/actions)  
+- [Jest - Testes em JS](https://jestjs.io/)  
+- [ESLint - Linting para JS](https://eslint.org/)  
+- [Prettier - Formatação de Código](https://prettier.io/)  
+- [Material Design Guidelines](https://material.io/design)  
 
-### **🔗 Links Úteis**  
-📌 [GitHub Actions Docs](https://docs.github.com/en/actions)  
-📌 [Jest - Testes em JS](https://jestjs.io/)  
-📌 [Material Design Guidelines](https://material.io/design)  
+---
 
-
-🔹 **Próximas Atualizações**:  
-✔ Adicionar **mais testes**  
-✔ Implementar **deploy automático**  
-✔ Melhorar **documentação de CI/CD**  
-
+## **🔮 Próximas Atualizações**  
+- Adicionar **mais testes**.  
+- Implementar **deploy automático**.  
+- Melhorar **documentação de CI/CD**.  
