@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (operation != null) {
             previousOperandElement.innerText = `${previousOperand} ${operation}`;
         } else {
-            previousOperandElement.innerText = previousOperand;
+            previousOperandElement.innerText = previousOperand;{}
        // induzindo o erro - Removendo a chave = 
        }
     }
